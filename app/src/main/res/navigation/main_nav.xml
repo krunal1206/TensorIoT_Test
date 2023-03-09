@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/fragment_profile">
+    <fragment
+        android:id="@+id/fragment_profile"
+        android:name="com.tensor.myapplication.ui.main.fragment.FragmentProfile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_forecast_details"
+            app:destination="@id/fragment_details"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_details"
+        android:name="com.tensor.myapplication.ui.main.fragment.FragmentForecastDetails"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_forecast_details">
+
+        <argument
+            android:name="temprature"
+            app:argType="string" />
+        <argument
+            android:name="condition"
+            app:argType="string" />
+        <argument
+            android:name="humidity"
+            app:argType="string" />
+        <argument
+            android:name="wind_speed"
+            app:argType="string" />
+
+    </fragment>
+</navigation>

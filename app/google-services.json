@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1044167940602",
+    "firebase_url": "https://tensoriot-test-default-rtdb.firebaseio.com",
+    "project_id": "tensoriot-test",
+    "storage_bucket": "tensoriot-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044167940602:android:c1bfc5fa227173a02cec43",
+        "android_client_info": {
+          "package_name": "com.tensor.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1044167940602-nj6u2hhoit5j9037qmnn9vige9d2n7mu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB07YuBGNGiPTqnCSSFHgyPbQByieZiA2c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1044167940602-nj6u2hhoit5j9037qmnn9vige9d2n7mu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.tensor.myapplication.model.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/appbar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/purple_500"
+            app:layout_constraintDimensionRatio="H,4:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivProfilePic"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginTop="60dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_placeholder"
+            app:civ_border_color="@color/black"
+            app:civ_border_width="1dp"
+            app:civ_circle_background_color="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/appbar"
+            app:layout_constraintStart_toStartOf="@id/appbar"
+            app:layout_constraintTop_toBottomOf="@id/appbar"
+            app:layout_constraintTop_toTopOf="@id/appbar" />
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@{user.username}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/ivProfilePic"
+            app:layout_constraintStart_toStartOf="@id/ivProfilePic"
+            app:layout_constraintTop_toBottomOf="@id/ivProfilePic" />
+
+        <TextView
+            android:id="@+id/tvBio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@{user.bio}"
+            android:textAlignment="center"
+            android:textColor="@color/purple_500"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/tvUsername"
+            app:layout_constraintStart_toStartOf="@id/tvUsername"
+            app:layout_constraintTop_toBottomOf="@id/tvUsername" />
+
+        <EditText
+            android:id="@+id/evSearch"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/round_rect_editext"
+            android:hint="@string/search_city_here"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:textColor="@color/purple_200"
+            android:textColorHint="@color/purple_700"
+            app:layout_constraintDimensionRatio="H,6:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBio"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintDimensionRatio="H,2:1"
+            app:layout_constraintEnd_toEndOf="@id/evSearch"
+            app:layout_constraintStart_toStartOf="@id/evSearch"
+            app:layout_constraintTop_toBottomOf="@id/evSearch">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_200"
+                android:text="@string/search"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="H,6:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/btnSearch"
+                app:layout_constraintEnd_toEndOf="@id/btnSearch"
+                app:layout_constraintStart_toStartOf="@id/btnSearch"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_280sdp"
+            app:cardBackgroundColor="#EFEFEF"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardElevation="@dimen/_5sdp"
+            app:cardUseCompatPadding="true">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ScrollView
+                    android:scrollbars="none"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="800dp"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/tvLocation"
+                            android:textColor="@color/purple_200"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mumbai,Gujarat"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvCurrentTemp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="37.0 C"
+                            android:textColor="@color/teal_200"
+                            android:textSize="@dimen/_28ssp" />
+
+                        <TextView
+                            android:textColor="@color/purple_200"
+                            android:id="@+id/tvCurrentCondtion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_14ssp"
+                            android:text="Sunny"
+                            android:textSize="@dimen/_18ssp" />
+                        <TextView
+                            android:textSize="@dimen/_12ssp"
+                            android:textColor="@color/purple_700"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/next_7_days_forecast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvItems"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            tools:listitem="@layout/item_forecast"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"/>
+                    </LinearLayout>
+
+                </ScrollView>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

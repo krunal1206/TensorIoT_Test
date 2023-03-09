@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">TensorIoT Test</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="username">Username</string>
+    <string name="sign_up">Sign up</string>
+    <string name="a_short_bio">A short bio</string>
+    <string name="or">OR</string>
+    <string name="set_display_picture">Set Display Picture</string>
+    <string name="user_registered_successfully">User registered successfully</string>
+    <string name="user_login_successfully">User login successfully</string>
+    <string name="search">Search</string>
+    <string name="search_city_here">Search City Here...</string>
+    <string name="next_7_days_forecast">Next 7 days forecast</string>
+    <string name="temprature">Temprature :</string>
+    <string name="condition">Condition :</string>
+    <string name="humidity">Humidity :</string>
+    <string name="wind_speed">Wind Speed :</string>
+    <string name="go_back">Go Back</string>
+    <string name="logout">Logout</string>
+    <string name="please_enter_email">Please enter email</string>
+    <string name="please_enter_password">Please enter password</string>
+    <string name="please_enter_username">Please enter username</string>
+    <string name="please_enter_password_correctly">Please enter passwords and confirm password correctly</string>
+    <string name="password_confirm_password_not_matching">Confirm password not matching with Password</string>
+    <string name="please_write_bio">Please write you short bio</string>
+    <string name="please_capture_image">Please capture your profile pic</string>
+
+</resources>

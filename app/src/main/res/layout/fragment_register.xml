@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/_10sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,7:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtBio">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_200"
+                android:text="@string/sign_up"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="H,6:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:visibility="invisible"
+                android:id="@+id/progressbar"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/btnSignUp"
+                app:layout_constraintStart_toStartOf="@id/btnSignUp"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivProfilePic"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginVertical="@dimen/_16ssp"
+            android:background="@drawable/ic_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:text="@string/set_display_picture"
+            android:textColor="@color/purple_700"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="@id/ivProfilePic"
+            app:layout_constraintStart_toEndOf="@id/ivProfilePic"
+            app:layout_constraintTop_toTopOf="@id/ivProfilePic" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/_18sdp"
+            android:background="@null"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/purple_700"
+            android:textStyle="bold"
+            app:layout_constraintDimensionRatio="H,7:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivProfilePic" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"
+            android:background="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="@id/edtEmail"
+            app:layout_constraintStart_toStartOf="@id/edtEmail"
+            app:layout_constraintTop_toBottomOf="@id/edtEmail" />
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@null"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/purple_700"
+            android:textStyle="bold"
+            app:layout_constraintDimensionRatio="H,7:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtEmail"
+            tools:text="" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"
+            android:background="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="@id/edtPassword"
+            app:layout_constraintStart_toStartOf="@id/edtPassword"
+            app:layout_constraintTop_toBottomOf="@id/edtPassword" />
+
+        <EditText
+            android:id="@+id/edtConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:background="@null"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/purple_700"
+            android:textStyle="bold"
+            app:layout_constraintDimensionRatio="H,7:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtPassword"
+            tools:text="" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"
+            android:background="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="@id/edtConfirmPassword"
+            app:layout_constraintStart_toStartOf="@id/edtConfirmPassword"
+            app:layout_constraintTop_toBottomOf="@id/edtConfirmPassword" />
+
+        <EditText
+            android:id="@+id/edtUsername"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:background="@null"
+            android:hint="@string/username"
+            android:inputType="textEmailAddress"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/purple_700"
+            android:textStyle="bold"
+            app:layout_constraintDimensionRatio="H,7:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtConfirmPassword" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"
+            android:background="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="@id/edtUsername"
+            app:layout_constraintStart_toStartOf="@id/edtUsername"
+            app:layout_constraintTop_toBottomOf="@id/edtUsername" />
+
+        <EditText
+            android:id="@+id/edtBio"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:background="@null"
+            android:hint="@string/a_short_bio"
+            android:inputType="text"
+            android:maxLength="40"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/purple_700"
+            android:textStyle="bold"
+            app:layout_constraintDimensionRatio="H,6:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtUsername" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="2"
+            android:background="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="@id/edtBio"
+            app:layout_constraintStart_toStartOf="@id/edtBio"
+            app:layout_constraintTop_toBottomOf="@id/edtBio" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
